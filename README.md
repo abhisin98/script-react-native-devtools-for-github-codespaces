@@ -41,10 +41,11 @@ This script streamlines launching React Native DevTools in GitHub Codespaces by 
 
      # Construct the new URL using the tunnel URL
      FINAL_URL="$TUNNEL_URL$PATH_QUERY"
+     echo "Opening URL: $FINAL_URL"
 
      # Detect platform and open URL accordingly
      if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-       xdg-open "$FINAL_URL"
+       xdg-open "$FINAL_URL" || sensible-browser "$FINAL_URL"
      elif [[ "$OSTYPE" == "darwin"* ]]; then
        open "$FINAL_URL"
      elif [[ "$OSTYPE" == "cygwin"* || "$OSTYPE" == "msys"* ]]; then
@@ -57,6 +58,7 @@ This script streamlines launching React Native DevTools in GitHub Codespaces by 
      echo "Error: Invalid argument format. Expected --app=<URL>"
      exit 1
    fi
+
    ```
 
 3. **Edit the tunnel URL:**
