@@ -1,6 +1,6 @@
 # React Native DevTools for GitHub Codespaces
 
-This script simplifies development inside GitHub Codespaces by rewriting the DevTools URL with a tunnel URL and opening it in your system browser. It's tailored for use with `expo start --tunnel`.
+This script streamlines launching React Native DevTools in GitHub Codespaces by rewriting the DevTools URL with a tunnel URL and opening it in your system browser. It's designed for use with `expo start --tunnel`.
 
 ## Features
 
