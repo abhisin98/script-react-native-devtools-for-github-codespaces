@@ -20,10 +20,11 @@ if [[ "$1" == --app=* ]]; then
 
   # Construct the new URL using the tunnel URL
   FINAL_URL="$TUNNEL_URL$PATH_QUERY"
+  echo "Opening URL: $FINAL_URL"
 
   # Detect platform and open URL accordingly
   if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    xdg-open "$FINAL_URL"
+    xdg-open "$FINAL_URL" || sensible-browser "$FINAL_URL"
   elif [[ "$OSTYPE" == "darwin"* ]]; then
     open "$FINAL_URL"
   elif [[ "$OSTYPE" == "cygwin"* || "$OSTYPE" == "msys"* ]]; then
